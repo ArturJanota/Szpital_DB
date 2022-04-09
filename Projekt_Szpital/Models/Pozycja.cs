@@ -8,10 +8,11 @@ namespace Projekt_Szpital.Models
 {
     public class Pozycja
     {
+        [Key]
         public int ID { get; set; }
-        [Required]
+        
         public int Pokoj { get; set; }
-        [Required]
+        
         public bool Dostepny { get; set; }
         [Required]
         public string Specjalizacja { get; set; }

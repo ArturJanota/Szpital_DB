@@ -9,7 +9,7 @@ namespace Projekt_Szpital.Models
     public class Pracownik
     {
 
-        
+        [Key]
         public int ID { get; set; }
         [Required]
         [StringLength(20)]
@@ -17,10 +17,12 @@ namespace Projekt_Szpital.Models
         [Required]
         [StringLength(20)]
         public string Imie { get; set; }
-        [Required]
+        
         public decimal Pensja { get; set; }
-        [Key]
+        
         public Pozycja Pozycja { get; set; }
+
+       
 
 
     }
