@@ -12,6 +12,8 @@ namespace Projekt_Szpital.Repository
     {
         private readonly DbContext context;
 
+        public IReadOnlyList<IPacjent> pacjents = new List<IPacjent>;
+
         public PacjentRepository(DbContext dbContext)
         {
             context = dbContext;
@@ -30,5 +32,6 @@ namespace Projekt_Szpital.Repository
             return context.Pacjent.Where(x => x.id == PacjentId).Single();
         }
 
+        
     }
 }

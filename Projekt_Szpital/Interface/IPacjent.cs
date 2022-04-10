@@ -12,5 +12,7 @@ namespace Projekt_Szpital.Interface
         public void put(int pacjentID, int pesel);
         public Pacjent getPacjentById(int id);
 
+        IReadOnlyList<IPacjent> pacjents { get; }
+
     }
 }

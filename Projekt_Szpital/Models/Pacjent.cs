@@ -18,5 +18,14 @@ namespace Projekt_Szpital.Models
         
         [StringLength(70)]
         public string Stan_przyjecia { get; set; }
+
+        
+
+        public Pacjent( int pesel, string stan_przyjecia)
+        {
+          
+            Pesel = pesel;
+            Stan_przyjecia = stan_przyjecia;
+        }
     }
 }
