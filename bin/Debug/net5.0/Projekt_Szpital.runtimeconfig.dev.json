@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Sznopik\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Sznopik\\.nuget\\packages"
+    ]
+  }
+}
