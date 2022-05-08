@@ -95,6 +95,23 @@ namespace Testy
             Mock.Get(pacjent).Verify(x => x.getPacjentById(2));
 
         }
+        [Test]
+        public void inmemorytestcontroller()
+        {
+            _contextOptions = new DbContextOptionsBuilder<FakeRepo>()
+       .UseInMemoryDatabase("inmemorytestcontroller test")
+       .ConfigureWarnings(b => b.Ignore(InMemoryEventId.TransactionIgnoredWarning))
+       .Options;
+
+            using var context = new FakeRepo(_contextOptions);
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
+            context.AddRange(
+                new Pacjent { ID = 1, Pesel = 12345678 },
+                new Pacjent { ID = 2, Pesel = 12345679 });
+
+            context.SaveChanges();
+        }
     }
          
 }

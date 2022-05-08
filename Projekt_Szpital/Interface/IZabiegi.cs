@@ -11,5 +11,7 @@ namespace Projekt_Szpital.Interface
         public void post(Zabiegi zabiegi);
         public void put(int zabiegID, Pacjent pacjent,Pracownik pracownik);
         public Zabiegi getZabiegById(int id);
+
+        IEnumerable<Pracownik> GetPracownicy(int id);
     }
 }

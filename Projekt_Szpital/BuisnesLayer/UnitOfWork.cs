@@ -5,12 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Projekt_Szpital.BuisnesLayer
 {
-    public class UnitOfWork
+    public class UnitOfWork :IUnitOfWork
     {
-        private BdContext context = new BdContext();
+        private readonly AppDbContext context;
         private IPozycja pozycja;
         private IPacjent pacjent;
         private IZabiegi zabiegi;

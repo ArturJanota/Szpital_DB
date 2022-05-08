@@ -1,4 +1,5 @@
-﻿using Projekt_Szpital.Interface;
+﻿using Projekt_Szpital.BuisnesLayer;
+using Projekt_Szpital.Interface;
 using Projekt_Szpital.Models;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,19 @@ namespace Projekt_Szpital.Repository
 {
     public class ZabiegiRepository :IZabiegi
     {
-        private readonly DbContext context;
+        private readonly IUnitOfWork context;
 
-        public ZabiegiRepository(DbContext dbContext)
+        public ZabiegiRepository(IUnitOfWork dbContext)
         {
             context = dbContext;
         }
+
+        public IEnumerable<Pracownik> GetPracownicy(int id)
+        {
+            return context.Pracownik.getPracownikById(id);
+        }
+
+       
         public Zabiegi getZabiegById(int ZabiegID)
         {
             return context.Zabiegi.Where(x => x.id == ZabiegID).Single();

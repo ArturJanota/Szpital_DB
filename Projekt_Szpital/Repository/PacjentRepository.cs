@@ -10,9 +10,9 @@ namespace Projekt_Szpital.Repository
 {
     public class PacjentRepository:IPacjent
     {
-        private readonly DbContext context;
+        private readonly AppDbContext context;
 
-        public IReadOnlyList<IPacjent> pacjents = new List<IPacjent>;
+        public IReadOnlyList<IPacjent> pacjents = new List<IPacjent>();
 
         public PacjentRepository(DbContext dbContext)
         {
